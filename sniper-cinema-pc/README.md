@@ -59,3 +59,12 @@ npm install -D unplugin-vue-components unplugin-auto-import
 ```
 npm i axios
 ```
+
+```
+.eslintrc.cjs
+
+rules: {
+    // 不强制要求组件名multi word
+    'vue/multi-word-component-names': 0,
+  }
+```
