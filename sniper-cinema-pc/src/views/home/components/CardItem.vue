@@ -1,11 +1,14 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, onMounted } from 'vue'
 
 const props = defineProps({
   item: {
     type: Object,
     required: true
   }
+})
+onMounted(() => {
+  console.log('CardItem mounted')
 })
 </script>
 
@@ -30,10 +33,11 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .card-item {
   position: relative;
-  width: 300px;
+  // width: 300px;
+  width: 190px;
   margin: 20px;
   img {
     width: 100%;
