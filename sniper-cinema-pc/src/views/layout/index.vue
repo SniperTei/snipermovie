@@ -22,7 +22,11 @@
     <div class="content">
       <router-view />
     </div>
-    
+    <!-- 底部页脚 -->
+    <div class="footer">
+      <p>© 2021 Sniper 版权所有</p>
+      <p>mail: sniper_zheng@163.com</p>
+    </div>
   </div>
 </template>
 
@@ -57,6 +61,11 @@
     }
     .content {
       padding: 20px;
+    }
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f0f0f0;
     }
   }
 </style>

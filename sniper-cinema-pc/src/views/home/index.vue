@@ -1,6 +1,6 @@
 <script setup>
-// import CardGrid from './components/CardGrid.vue'
-import CardItem from './components/CardItem.vue';
+import CardGrid from './components/CardGrid.vue'
+// import CardItem from './components/CardItem.vue';
 const title1 = '热门电影'
 const subTitle1 = '电影频道'
 const itemList1 = [
@@ -117,10 +117,10 @@ const itemList1 = [
       </div>
     </div>
     <!-- grid列表 -->
-    <!-- <CardGrid :title="title1" :subTitle="subTitle1" :itemList="itemList1"></CardGrid> -->
-    <div class="grid">
+    <CardGrid :title="title1" :subTitle="subTitle1" :itemList="itemList1"></CardGrid>
+    <!-- <div class="grid">
       <CardItem v-for="item in itemList1" :key="item.id" :item="item" />
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 <script setup>
 import { defineProps, onMounted } from 'vue'
-
 const props = defineProps({
   item: {
     type: Object,
