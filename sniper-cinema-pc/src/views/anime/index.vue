@@ -4,8 +4,8 @@
 
 <template>
   <div>
-    <h1>Home Page</h1>
-    <p>Welcome to the home page!</p>
+    <h1>anime Page</h1>
+    <p>Welcome to the anime page!</p>
   </div>
 </template>
 
