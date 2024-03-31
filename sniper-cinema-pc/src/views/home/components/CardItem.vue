@@ -1,0 +1,69 @@
+<script setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true
+  }
+})
+</script>
+
+<template>
+  <div class="card-item">
+    <!-- 背景图 -->
+    <img :src="item.cover" alt="cover" />
+    <!-- 电影名称 -->
+    <span>{{ item.name }}</span>
+    <!-- 标签 -->
+    <div class="tags">
+      <span v-for="tag in item.tags" :key="tag">{{ tag }}</span>
+    </div>
+    <!-- 演员列表 -->
+    <div class="actors">
+      <span v-for="actor in item.actors" :key="actor">{{ actor }}</span>
+    </div>
+    <!-- 播放量 -->
+    <span>播放量：{{ item.playCount }}</span>
+    <!-- 第几集 -->
+    <span v-if="item.type === 'drama'">第{{ item.episode }}集</span>
+  </div>
+</template>
+
+<style scoped>
+.card-item {
+  position: relative;
+  width: 300px;
+  margin: 20px;
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  span {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .tags {
+    span {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px;
+      background-color: #409eff;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+  .actors {
+    span {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+  }
+}
+</style>
