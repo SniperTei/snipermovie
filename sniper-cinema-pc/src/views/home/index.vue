@@ -93,13 +93,33 @@ const itemList1 = [
         nation: '美国'
       }
     ]
+const bannerList = [
+  {
+    id: 1,
+    imgUrl: 'https://img1.baidu.com/it/u=2948122369,95117273&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=756'
+  },
+  {
+    id: 2,
+    imgUrl: 'https://image14.m1905.cn/uploadfile/2018/0206/20180206092712415807.jpg'
+  },
+  {
+    id: 3,
+    imgUrl: 'https://pic.rmb.bdstatic.com/bjh/60c2e68f23602d612a4c8dada31368f6.jpeg'
+  }
+
+]
+
 </script>
 
 <template>
   <div class="home">
     <!-- 最上面滚动图 -->
     <div class="banner">
-      <img src="../../assets/banner.jpg" alt="banner" />
+      <el-carousel height="150px">
+        <el-carousel-item v-for="item in bannerList" :key="item.id">
+          <img :src="item.imgUrl" alt="">
+      </el-carousel-item>
+    </el-carousel>
     </div>
     <!-- 子分类 -->
     <div class="sub-category">

@@ -24,7 +24,7 @@
     </div>
     <!-- 底部页脚 -->
     <div class="footer">
-      <p>© 2021 Sniper 版权所有</p>
+      <p>© 2024 Sniper 版权所有</p>
       <p>mail: sniper_zheng@163.com</p>
     </div>
   </div>
