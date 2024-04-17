@@ -39,6 +39,15 @@ onMounted(() => {
     <div class="card-grid__content">
       <CardItem v-for="item in itemList" :key="item.id" :item="item" />
     </div>
+    <div class="card-grid__pagination">
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="400"
+        :page-size="10"
+        @current-change="handleCurrentChange"
+      />
+    </div>
   </div>
 </template>
 
