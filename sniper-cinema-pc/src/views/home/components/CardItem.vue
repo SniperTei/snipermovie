@@ -35,8 +35,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .card-item {
   position: relative;
-  // width: 300px;
-  width: 190px;
+  width: 240px;
   margin: 20px;
   img {
     width: 100%;

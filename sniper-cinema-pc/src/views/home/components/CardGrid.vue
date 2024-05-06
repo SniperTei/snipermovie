@@ -56,12 +56,13 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .card-grid {
+  background-color: aquamarine;
   .card-grid__head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    // background-color: aqua;
+    background-color: yellow;
     .card-grid__title {
       display: flex;
       flex-wrap: nowrap;
@@ -86,7 +87,7 @@ onMounted(() => {
   .card-grid__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 </style>
