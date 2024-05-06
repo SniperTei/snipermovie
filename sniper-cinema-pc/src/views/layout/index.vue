@@ -7,6 +7,12 @@ const userClick = () => {
 const logoutClick = () => {
   console.log('logoutClick')
 }
+const mockDataMovieList = [
+  '飞驰人生2',
+  '唐人街探案3',
+  '你好，李焕英',
+  '刺杀小说家'
+]
 </script>
 
 <template>
@@ -31,7 +37,25 @@ const logoutClick = () => {
       </div>
       <div class="nav-search">
         <div>
+          <!-- <el-icon><Search /></el-icon> -->
+          <el-button>全部分类</el-button>
+        </div>
+        <div class="nav-search-middle">
           <el-input placeholder="input search"></el-input>
+        </div>
+        <div class="nav-search-right">
+          <div v-for="movieName in mockDataMovieList" :key="movieName">{{ movieName }}</div>
+          <!-- <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              <el-button>最新</el-button>
+              <i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <template v-slot:dropdown>
+<el-dropdown-menu >
+              <el-dropdown-item v-for="item in mockDataMovieList" :key="item" :value="item">{{ item }}</el-dropdown-item>
+            </el-dropdown-menu>
+</template>
+          </el-dropdown> -->
         </div>
       </div>
     </div>
@@ -66,6 +90,24 @@ const logoutClick = () => {
           align-items: center;
           .nav-right-icon {
             margin-left: 20px;
+          }
+        }
+      }
+      .nav-search {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        .nav-search-middle {
+          flex: 1;
+          margin: 0 10px;
+        }
+        .nav-search-right {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          div {
+            margin-left: 10px;
           }
         }
       }
