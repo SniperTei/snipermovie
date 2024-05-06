@@ -115,11 +115,11 @@ const bannerList = [
   <div class="home">
     <!-- 最上面滚动图 -->
     <div class="banner">
-      <el-carousel height="150px">
+      <el-carousel height="460px">
         <el-carousel-item v-for="item in bannerList" :key="item.id">
           <img :src="item.imgUrl" alt="">
-      </el-carousel-item>
-    </el-carousel>
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <!-- 子分类 -->
     <div class="sub-category">
@@ -160,6 +160,7 @@ const bannerList = [
         justify-content: center;
         align-items: center;
         background-color: #f0f0f0;
+        margin: 0 10px;
         span {
           font-size: 24px;
           font-weight: bold;

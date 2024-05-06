@@ -25,15 +25,18 @@ onMounted(() => {
 
 <template>
   <div class="card-grid">
-    <div class="card-grid__title">
-      <!-- 左上角小标题 -->
-      <div class="card-grid__main-title">
-        {{ title }}
+    <div class="card-grid__head">
+      <div class="card-grid__title">
+        <!-- 左上角小标题 -->
+        <div class="card-grid__main-title">
+          {{ title }}
+        </div>
+        <!-- 标题旁边的子分类 -->
+        <div class="card-grid__sub-title">
+          {{ subTitle }}
+        </div>
       </div>
-      <!-- 标题旁边的子分类 -->
-      <div class="card-grid__sub-title">
-        {{ subTitle }}
-    </div>
+      <div class="card-grid__random">换一换</div>
     </div>
     <!-- 卡片内容Grid -->
     <div class="card-grid__content">
@@ -53,19 +56,31 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .card-grid {
-  .card-grid__title {
+  .card-grid__head {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    .card-grid__main-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 10px;
+    // background-color: aqua;
+    .card-grid__title {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px;
+      .card-grid__main-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .card-grid__sub-title {
+        font-size: 16px;
+      }
     }
-    .card-grid__sub-title {
-      font-size: 16px;
+    .card-grid__random {
+      margin-right: 10px;
+      // yellow color text
+      color: orange
     }
   }
   .card-grid__content {

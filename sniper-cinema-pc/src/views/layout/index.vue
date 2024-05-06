@@ -42,20 +42,11 @@ const mockDataMovieList = [
         </div>
         <div class="nav-search-middle">
           <el-input placeholder="input search"></el-input>
+          <!-- 搜索按钮 -->
+          <el-button>搜索</el-button>
         </div>
         <div class="nav-search-right">
           <div v-for="movieName in mockDataMovieList" :key="movieName">{{ movieName }}</div>
-          <!-- <el-dropdown trigger="click">
-            <span class="el-dropdown-link">
-              <el-button>最新</el-button>
-              <i class="el-icon-arrow-down el-icon--right"></i>
-            </span>
-            <template v-slot:dropdown>
-<el-dropdown-menu >
-              <el-dropdown-item v-for="item in mockDataMovieList" :key="item" :value="item">{{ item }}</el-dropdown-item>
-            </el-dropdown-menu>
-</template>
-          </el-dropdown> -->
         </div>
       </div>
     </div>
@@ -98,6 +89,8 @@ const mockDataMovieList = [
         flex-direction: row;
         margin-top: 10px;
         .nav-search-middle {
+          display: flex;
+          flex-direction: row;
           flex: 1;
           margin: 0 10px;
         }

@@ -45,12 +45,13 @@ onMounted(() => {
   }
   span {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 2px;
   }
   .tags {
     span {
+      font-size: 12px;
       display: inline-block;
       margin-right: 10px;
       padding: 5px;
@@ -60,6 +61,10 @@ onMounted(() => {
     }
   }
   .actors {
+    margin-top: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     span {
       display: inline-block;
       margin-right: 10px;
