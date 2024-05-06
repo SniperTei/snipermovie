@@ -3,10 +3,20 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+// 全局注册element图标 我们是按需自动引入，不需要全局引入
+// import ElementPlus from 'element-plus'
+// import 'element-plus/dist/index.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(ElementPlusIconsVue)
+// 全局注册element图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 app.mount('#app')
