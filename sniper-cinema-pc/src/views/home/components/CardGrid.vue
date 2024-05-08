@@ -1,6 +1,7 @@
 <script setup>
 import CardItem from './CardItem.vue'
 import { defineProps, onMounted } from 'vue'
+import { ref } from 'vue'
 const props = defineProps({
   title: {
     type: String,
@@ -14,11 +15,29 @@ const props = defineProps({
     type: Array,
     required: true,
     default: () => []
+  },
+  maxShow: { // 最多展示几项
+    type: Number,
+    default: 8
+  },
+  showPagination: { // 是否展示分页
+    type: Boolean,
+    default: true
   }
 })
 
+const myItemList = ref(props.itemList)
+
 onMounted(() => {
   console.log('CardGrid mounted')
+  // 获取itemList值
+  // const myItemList = props.itemList
+  console.log('myItemList', myItemList)
+  // 如果itemList长度大于maxShow，截取前maxShow项
+  if (myItemList.value.length > props.maxShow) {
+    myItemList.value = myItemList.value.slice(0, props.maxShow)
+  }
+  console.log('myItemList2', myItemList)
 })
 
 </script>
@@ -40,9 +59,9 @@ onMounted(() => {
     </div>
     <!-- 卡片内容Grid -->
     <div class="card-grid__content">
-      <CardItem v-for="item in itemList" :key="item.id" :item="item" />
+      <CardItem v-for="item in myItemList" :key="item.id" :item="item" />
     </div>
-    <div class="card-grid__pagination">
+    <div class="card-grid__pagination" v-if="showPagination">
       <el-pagination
         background
         layout="prev, pager, next"
@@ -56,13 +75,13 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .card-grid {
-  background-color: aquamarine;
+  // background-color: aquamarine;
   .card-grid__head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: yellow;
+    // background-color: yellow;
     .card-grid__title {
       display: flex;
       flex-wrap: nowrap;
@@ -81,13 +100,13 @@ onMounted(() => {
     .card-grid__random {
       margin-right: 10px;
       // yellow color text
-      color: orange
+      // color: orange
     }
   }
   .card-grid__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 </style>
