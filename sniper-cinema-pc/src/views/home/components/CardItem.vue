@@ -12,7 +12,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="card-item">
+  <RouterLink to="/home/detail" class="card-item">
+  <!-- <div class="card-item"> -->
     <!-- 背景图 -->
     <img :src="item.cover" alt="cover" />
     <!-- 电影名称 -->
@@ -29,7 +30,8 @@ onMounted(() => {
     <span>播放量：{{ item.playCount }}</span>
     <!-- 第几集 -->
     <span v-if="item.type === 'drama'">第{{ item.episode }}集</span>
-  </div>
+  <!-- </div> -->
+  </RouterLink>
 </template>
 
 <style lang="scss" scoped>

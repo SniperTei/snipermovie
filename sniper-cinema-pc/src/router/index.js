@@ -1,17 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Login from '@/views/login/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
     {
       path: '/',
       name: 'layout',
       component: () => import('@/views/layout/index.vue'),
       children: [
         {
+          path: '',
+          name: 'home',
+          component: () => import('@/views/home/index.vue'),
+        },
+        {
           path: '/home',
           name: 'home',
-          component: () => import('@/views/home/index.vue')
+          component: () => import('@/views/home/index.vue'),
+          children: [
+            {
+              path: '/detail',
+              name: 'detail',
+              component: () => import('@/views/home/detail.vue')
+            },
+          ]
         },
         {
           path: '/movie',
